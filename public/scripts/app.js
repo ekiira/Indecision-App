@@ -48,7 +48,7 @@ var user = {
     location: 'Toronto'
 };
 
-function getLocation(location) {
+var getLocation = function getLocation(location) {
     if (location) {
         return React.createElement(
             "p",
@@ -57,7 +57,7 @@ function getLocation(location) {
             location
         );
     }
-}
+};
 var templateTwo = React.createElement(
     "div",
     null,
