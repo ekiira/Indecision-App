@@ -1,7 +1,5 @@
 "use strict";
 
-console.log("app.js is running!");
-
 var app = {
     title: "Indecision App",
     subtitle: "Put your life in the hands of a computer",
