@@ -11,6 +11,7 @@ const Option = ({ count, optionText, handleRemove }) => (
       {' '}
       {optionText}
     </p>
+
     <button
       type="button"
       className="button button--link"
