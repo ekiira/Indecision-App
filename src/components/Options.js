@@ -1,13 +1,11 @@
-/* eslint-disable linebreak-style */
 /* eslint-disable react/prop-types */
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable react/button-has-type */
-/* eslint-disable react/jsx-filename-extension */
 
 import React from 'react';
 import Option from './Option';
 
-const Options = (props) => (
+const Options = ({
+  handleRemoveAll, hasOptions, options, handleRemove
+}) => (
   <div>
     <div className="widget-header">
       <h3
@@ -17,19 +15,20 @@ const Options = (props) => (
       </h3>
       <button
         className="button button--link"
-        onClick={props.handleRemoveAll}
+        onClick={handleRemoveAll}
+        type="submit"
       >
         Remove all
       </button>
     </div>
-    { !props.hasOptions && <p className="widget__message">Please add options to get started!</p> }
+    { !hasOptions && <p className="widget__message">Please add options to get started!</p> }
     {
-                props.options.map((option, index) => (
+                options.map((option, index) => (
                   <Option
                     key={option}
                     optionText={option}
                     count={index + 1}
-                    handleRemove={props.handleRemove}
+                    handleRemove={handleRemove}
                   />
                 ))
             }

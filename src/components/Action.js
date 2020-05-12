@@ -1,17 +1,14 @@
-/* eslint-disable linebreak-style */
 /* eslint-disable react/prop-types */
-/* eslint-disable react/button-has-type */
-/* eslint-disable react/jsx-filename-extension */
-/* eslint-disable react/destructuring-assignment */
 
 import React from 'react';
 
-const Action = (props) => (
+const Action = ({ handlePick, hasOptions }) => (
   <div>
     <button
+      type="submit"
       className="big-button"
-      onClick={props.handlePick}
-      disabled={!props.hasOptions}
+      onClick={handlePick}
+      disabled={!hasOptions}
     >
       What should i do?
     </button>

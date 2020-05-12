@@ -1,23 +1,21 @@
-/* eslint-disable linebreak-style */
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable react/button-has-type */
-/* eslint-disable react/jsx-filename-extension */
 
 import React from 'react';
 
-const Option = (props) => (
+const Option = ({ count, optionText, handleRemove }) => (
   <div className="option">
     <p className="option__text">
-      {props.count}
+      {count}
       .
       {' '}
-      {props.optionText}
+      {optionText}
     </p>
     <button
+      type="button"
       className="button button--link"
       onClick={(e) => {
-        props.handleRemove(props.optionText);
+        handleRemove(optionText);
       }}
     >
       Remove

@@ -1,23 +1,20 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prop-types */
-/* eslint-disable react/jsx-filename-extension */
-/* eslint-disable react/button-has-type */
 
 import React from 'react';
 import Modal from 'react-modal';
 
-const OptionModal = (props) => (
+const OptionModal = ({ selectedOption, handleModal }) => (
   <Modal
-    isOpen={!!props.selectedOption}
-    onRequestClose={props.handleModal}
+    isOpen={!!selectedOption}
+    onRequestClose={handleModal}
     contentLabel="Selected Option"
     closeTimeoutMS={200}
     className="modal"
+    ariaHideApp={false}
   >
     <h3 className="modal__title">Selected Option </h3>
-    {props.selectedOption && <p className="modal__body">{props.selectedOption}</p>}
-    <button className="button" onClick={props.handleModal}>Okay</button>
+    {selectedOption && <p className="modal__body">{selectedOption}</p>}
+    <button className="button" onClick={handleModal} type="submit">Okay</button>
   </Modal>
 );
 
