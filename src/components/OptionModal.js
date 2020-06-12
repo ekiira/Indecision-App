@@ -18,4 +18,5 @@ const OptionModal = ({ selectedOption, handleModal }) => (
   </Modal>
 );
 
+
 export default OptionModal;
